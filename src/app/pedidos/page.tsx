@@ -53,7 +53,6 @@ export default function PedidosPage() {
   const allowed = useRoleGuard(["empreendedor", "cooperativa"]);
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<Order["status"] | "all">("all");
-  if (!allowed) return null;
 
   const filtered = useMemo(() => {
     return MOCK.filter((o) => {
@@ -62,6 +61,13 @@ export default function PedidosPage() {
       return matchesText && matchesStatus;
     });
   }, [query, status]);
+
+  if (!allowed) return null;
+
+  const onStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value as Order["status"] | "all";
+    setStatus(val);
+  };
 
   const badgeClass = (s: Order["status"]) => {
     switch (s) {
@@ -87,7 +93,7 @@ export default function PedidosPage() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <select className="border rounded px-3 py-2 w-full sm:w-48" value={status} onChange={(e) => setStatus(e.target.value as any)}>
+        <select className="border rounded px-3 py-2 w-full sm:w-48" value={status} onChange={onStatusChange}>
           {STATUS_OPTIONS.map((opt) => (
             <option key={opt.key} value={opt.key}>{opt.label}</option>
           ))}
