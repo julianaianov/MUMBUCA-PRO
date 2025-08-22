@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -17,11 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mumbuca Pro",
   description: "Crédito + Produção + Venda",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -32,11 +33,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 text-neutral-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 text-neutral-900 overflow-x-hidden`}
       >
         <RoleProvider>
           <Nav />
-          <main className="max-w-6xl mx-auto px-4 py-6">{children}</main>
+          <main className="w-full max-w-6xl mx-auto px-4 py-6">{children}</main>
         </RoleProvider>
       </body>
     </html>

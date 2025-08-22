@@ -4,6 +4,11 @@
   --brand-red: #d6402b;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .brand-bg {
   background-color: var(--brand-red);
 }
@@ -26,4 +31,9 @@
 
 .btn-outline {
   @apply border border-[var(--brand-red)] text-[var(--brand-red)] rounded px-4 py-2 bg-white;
+}
+
+/* Inputs full width on mobile */
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  @apply w-full;
 }

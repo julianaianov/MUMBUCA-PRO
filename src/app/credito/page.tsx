@@ -6,7 +6,7 @@ export default function CreditoPage() {
   const [plano, setPlano] = useState('insumos');
 
   return (
-    <div className="grid gap-6 max-w-xl">
+    <div className="grid gap-6 max-w-xl w-full">
       <h2 className="text-2xl font-bold">Crédito Solidário</h2>
       <div className="rounded-xl p-5 border bg-white grid gap-4">
         <label className="grid gap-1">

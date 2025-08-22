@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-8 w-full">
       <section className="rounded-xl brand-bg text-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <h1 className="text-3xl font-extrabold">Mumbuca Pro</h1>
@@ -16,7 +16,7 @@ export default function Home() {
         <Image src="/mumbuca.jpeg" alt="Mumbuca Pro" width={140} height={140} className="rounded shadow-lg" />
       </section>
 
-      <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           { href: "/credito", title: "Crédito Solidário", desc: "Simule e solicite crédito em Mumbuca" },
           { href: "/producao", title: "Produção Coletiva", desc: "Tarefas, metas e recursos" },

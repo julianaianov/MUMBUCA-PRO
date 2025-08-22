@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <header className="brand-bg text-white sticky top-0 z-30">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
+      <div className="w-full max-w-full mx-auto px-4 py-3 flex items-center justify-between relative">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Image src="/mumbuca.jpeg" alt="Mumbuca Pro" width={28} height={28} className="rounded" />
           Mumbuca Pro

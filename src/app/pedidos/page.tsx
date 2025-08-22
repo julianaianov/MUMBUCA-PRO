@@ -83,10 +83,10 @@ export default function PedidosPage() {
   };
 
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-6 w-full">
       <h2 className="text-2xl font-bold">Pedidos</h2>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full">
         <input
           className="border rounded px-3 py-2 w-full sm:w-64"
           placeholder="Buscar por cliente ou ID"
@@ -100,7 +100,7 @@ export default function PedidosPage() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
         {filtered.map((o) => (
           <div key={o.id} className="card">
             <div className="flex items-center justify-between">
